@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <title>Login</title>
+</head>
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
+            <div class="card-body p-4">
+                <h1 class="h4 card-title text-center mb-4">Login</h1>
+                <form action="/login" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="username" id="login" placeholder="nome@exemplo.com" required>
+                        <label for="login">Login</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" name="password" id="pass" placeholder="Senha" required>
+                        <label for="pass">Senha</label>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" name="manter_conectado" id="check" value="true">
+                        <label class="form-check-label" for="check">Quero manter conectado</label>
+                    </div>
+                    <p class="text-danger" id="falhaLogin"></p>
+                    <button type="submit" class="btn btn-primary w-100">Fazer login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        if (parametros.get('erro') === '1') {
+            document.getElementById('falhaLogin').innerText = "Usuário e/ou senha inválidos";
+        }
+    </script>
+</body>
+</html>

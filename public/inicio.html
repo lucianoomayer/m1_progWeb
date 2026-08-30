@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <script src="main.js" defer></script>
+    <title>Início</title>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">Sistema</span>
+            <a href="/logout" class="btn btn-outline-light btn-sm">Sair do sistema</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+                <h1 class="h3 mb-4">Bem vindo, <span id="userName"></span>.</h1>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        O seu login foi realizado em <strong id="loginDateTime"></strong>.
+                    </li>
+                    <li class="list-group-item">
+                        Você acessou o sistema por meio do navegador <strong id="userAgentInfo"></strong>.
+                    </li>
+                    <li class="list-group-item">
+                        Sua sessão é válida até <strong id="sessionValidity"></strong>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+                <h2 class="h5 mb-3">Histórico de acessos</h2>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Dia e horário</th>
+                                <th scope="col">Navegador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <tr>
+                                <td>1</td>
+                                <td>[dia e horário]</td>
+                                <td>[navegador]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-4">
+            <a href="/logout" class="btn btn-danger">Clique aqui para sair do sistema</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
