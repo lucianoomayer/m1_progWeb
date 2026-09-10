@@ -69,7 +69,7 @@ app.post("/login", function (req, res) {
             res.cookie('manterConectado', 'true', { maxAge: msTresDias });
         }
 
-        const horaLogin = new Date().toLocaleString();
+        const horaLogin = new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" });
         const navegadorLogin = req.headers['user-agent'];
 
         // Histórico acumula os logins em um cookie próprio, independente do "manter conectado",
